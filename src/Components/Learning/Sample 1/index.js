@@ -1,14 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Main from './Components/Main';
-import './styles/styles.css'
-import { BrowserRouter } from 'react-router-dom'
-import { createStore,applyMiddleware ,compose} from 'redux'
-import rootReducer from './redux/reducer'
-import { Provider } from 'react-redux'
-import App from './Components/App'
-import thunk from 'redux-thunk'
-import database from './database/config'
+
 // const header = React.createElement("h3", null, "Hello Pradeep!!!!. Welcome to REACT world.");
 // const text=React.createElement("h3", null, " Welcome to REACT world.");
 // const weekends = ['SAT', 'SUN'];
@@ -24,7 +17,7 @@ import database from './database/config'
 //Same as Create element .Prop set to index
 
 //Encapsulate to one tag to div, if there are two tags like h1 and ol
-// const week = <div>\
+// const week = <div>
 //     <h1>Week Name</h1>
 //     <ol>
 //         {weekdays.map((weekday, index) => <li key={index}> {weekday} </li>)}
@@ -79,15 +72,5 @@ import database from './database/config'
 
 // ReactDOM.render(<Main />, document.getElementById('WOW'));
 
-//Using redux
-const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
-const store = createStore(
-    rootReducer,
-  composeEnhancer(applyMiddleware(thunk)),
-);
-
-export default store;
-
 //Sample 4
-ReactDOM.render(<Provider store={store}><BrowserRouter><App /></BrowserRouter></Provider>, document.getElementById('WOW'));
+ReactDOM.render(<Main />, document.getElementById('WOW'));
